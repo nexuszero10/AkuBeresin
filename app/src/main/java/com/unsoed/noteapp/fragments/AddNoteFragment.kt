@@ -53,11 +53,11 @@ class AddNoteFragment : Fragment(R.layout.fragment_add_note), MenuProvider {
             val note = Note(0, noteTitle, noteDesc)
             notesViewModel.addNote(note)
 
-            Toast.makeText(addNoteView.context, "Note Saved", Toast.LENGTH_SHORT).show()
+            Toast.makeText(addNoteView.context, "Note Disimpan", Toast.LENGTH_SHORT).show()
             view.findNavController().popBackStack(R.id.homeFragment, false)
 
         } else {
-            Toast.makeText(addNoteView.context, "Please Eenter note title", Toast.LENGTH_SHORT).show()
+            Toast.makeText(addNoteView.context, "Mohon masukkan judul catatan", Toast.LENGTH_SHORT).show()
         }
     }
 

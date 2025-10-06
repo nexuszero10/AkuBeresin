@@ -60,7 +60,7 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_note), MenuProvider {
                 notesViewModel.updateNote(note)
                 view.findNavController().popBackStack(R.id.homeFragment, false)
             } else {
-                Toast.makeText(context, "Please enter note title", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Mohon Masukkan Judul Catatan", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -69,10 +69,10 @@ class EditNoteFragment : Fragment(R.layout.fragment_edit_note), MenuProvider {
     private fun deleteNote() {
         androidx.appcompat.app.AlertDialog.Builder(requireContext()).apply {
             setTitle("Delete Note")
-            setMessage("Do you want to delete this note?")
+            setMessage("Anda Yakin Ingin Menghapus Catatan Ini ?")
             setPositiveButton("Delete") { _, _ ->
                 notesViewModel.deleteNote(currentNote)
-                Toast.makeText(context, "Note Deleted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Catatan Dihapus", Toast.LENGTH_SHORT).show()
                 view?.findNavController()?.popBackStack(R.id.homeFragment, false)
             }
             setNegativeButton("Cancel", null)
